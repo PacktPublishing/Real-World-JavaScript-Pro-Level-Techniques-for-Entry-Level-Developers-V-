@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<!-- This is the HTML5 tag playground -->
+<html lang="en" >
+	<head>
+		<title>Video 1 Playground</title>
+		<meta charset="UTF-8"> 
+		<style>
+			#message_container {
+				font-size: 24px;
+			}
+			button {
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body onload="setupFunctions();">
+	<pre style="font-size: 32px;">
+	<script>
+		//Variable Types
+		//Primitives:
+		var isAGoodDayToLearnJavascript = true; //boolean
+		var loopNum = 0; //numeric - integers and doubles
+		var myName = "Nick"; //strings
+
+		//Complex:
+		var itemsInBackpack = ["pencil","paper","book"]; //array
+		//This can also be written as 'new Array("pencil","paper","book");
+		
+		//How to loop through an array
+		for (item in itemsInBackpack) { 
+			//the new variable item is the key to access each item in the array.
+			document.writeln("We have an item in our backpack: " + itemsInBackpack[item]);
+		}
+		
+		//Object: 
+		var person = {
+			name: "Nick",
+			height: 71,
+			hairColor: "Brown",
+			favoriteFood: "Pizza"
+			};	
+			
+		person.favoriteFood = "Lasagna";
+		person['favoriteFood']; // returns Lasagna
+		
+		var myVariable = "name";
+		person[myVariable]; // return Nick
+		//Operators (what you can do with variables:
+		// + -> Addition or join.  7+7 = 14, "blue"+"sky" = "bluesky" 
+		// - -> Subtraction.  7-4 = 3.  "blue"-"sky" = error 
+		// * -> multiplication. 3*4 = 12
+		// ^ -> to the power of: 2^4 = 16
+		// / -> division.  12/4 = 3 
+		// % -> Modulus (division remainder).  10%3 = 1 
+		// ++ -> increment by 1.  4++ = 5 - can also use it like this: ++4 = 5
+		// -- -> decrement by 1.  4-- = 3 - can also use it in front: --4 = 3	
+		// = -> Assignation.  Set a variable equal to some value.  x = 1
+		
+		x = 1; // x is equal to 1;
+		y = x + 1; // y = 2 because x = 1;
+		x === y; // x is 1, y is 2; so the return is FALSE;
+		if (x === y) {
+			//alert("X is equal to Y");
+		} else {
+			//alert("X is NOT equal to Y");
+		}
+		
+		c = 4;
+		b = c++; //b = 4; c = 5; This is because b = c, THEN then ++ makes C 5
+
+		c = 4;
+		b = ++c; //b = 5; c = 5; This is because the ++c happens first.
+		
+		e = 8;
+		f = e--; //f = 8; e=7; f = e first, then e = e - 1;
+
+		e = 8;
+		f = --e; //f = 7; e=7; e = e - 1 happens first, because the -- is in front 
+		
+		
+		if (!isAGoodDayToLearnJavascript) {
+			alert("Why not?!");
+		}
+		
+		if (x !== y) {
+			//do something
+		} else {
+			//do something else
+		}
+
+		// === -> Comparison.  Check to see if two things are equal.
+		//							var x = 1;
+		//							x === 2; // this returns false
+		//							x === 1; // this returns true
+		// == -> A less safe comparison and is not recommended, but was
+		//				heavily used in the past, so you'll see it.  It 
+		//				will attempt to perform a type conversion on the
+		//				variables to make them equal.  While code will work
+		//				it's recommended to use === instead of ==
+		// ! -> Not.  This reversed a true or false value.
+		// !== -> Comparison - Not equal to...
+		//							x !== 2; // this returns true
+		//							x !== 1; // this returns false
+		// != -> a less safe comparison.  While it works, as with == and ===,
+		//				!= will attempt to convert type, which may not yield the
+		//				desired results.
+		// > -> Comparison - Greater than.
+		//							1 > 2; // this returns false
+		//							8 > 5; // this returns true
+		// < -> Comparison - Less than.  Opposite of greater than.
+		// <= and >= -> Comparison.  Less than or equal to; Greater than or equal to.
+		// && -> And operator.  If this AND this.  Returns true if both conditions are true
+		//							2 > 1 && 5 > 4; // this returns true
+		// || -> Or operator.  Returns true if either of the conditions are true.
+		// () -> A way to group any set of statements
+		//							(2 * (4 + 6)); // this returns 20
+		//							((2 * 4) + 6); // this returns 14
+				
+		function someFunction() {
+			var pizza = "Delicious";
+			if (person.favoriteFood === "pizza") {
+				alert("We have your favorite food");
+			}
+			/* All the code in here is ONLY inside this function
+			   It can read global variables (ones declared outside of a function) but 
+			   it cannot create new global variables.
+			*/
+		}
+			
+		function addTen(myNum) {
+			var pizza = "ehh ok";
+			return myNum + 10;
+		}
+		
+		var myNumber = 5;
+		someFunctionWithParameters("I just set myNumber to " + myNumber);
+		addTen(myNumber); // result = 15
+		myNumber = addTen(myNumber);
+		someFunctionWithParameters("I just set myNumber to " + myNumber);
+		myNumber = addTen(addTen(addTen(myNumber)));
+		someFunctionWithParameters("I just set myNumber to " + myNumber);
+		
+		function someFunctionWithParameters(someValue) {
+			/* This function has a single parameter, which lets you pass a value
+			   and the function will do something with that value. */
+			document.writeln(someValue);
+		}
+		
+		//The typeof() function
+		document.writeln("The Typeof() for person is: " + typeof(person));
+		document.writeln("The Typeof() for isAGoodDayToLearnJavascript is: " + typeof(isAGoodDayToLearnJavascript));
+		document.writeln("The Typeof() for badVariable is: " + typeof(badVariable));
+		
+		
+		//The DOM -> Document Object Model.  The DOM lets you change any aspect of
+		//an HTML document.  You can edit tags, attributes, CSS, HTML, and events.
+
+		//There are multiple ways to select an HTML element:
+		//		getElementById
+		//		getElementsByTagName
+		//		getElementsByClassName
+		//		getElementsBy
+
+		/*
+		*/
+		function setupFunctions() {
+			var elem = document.getElementById("basic_text");
+			elem.style.color="rgba(60,60,255,1)";
+			elem.style.fontSize="32px";
+			//You can also edit the .innerHTML
+			elem.innerHTML = "This replaces all the content of the DIV";
+			//you can access an attribute such as the href of an <a tag using .getAttribute()
+			//document.getElementById("some_link").getAttribute("href");
+			//settings the values are the same, use .setAttribute("value");
+
+			var links = document.getElementsByTagName("a");
+			var output = "";
+			for (i=0; i < links.length; i++) {
+				var link_address = links[i].getAttribute("href");
+				output = output + "Have a link " + i + " with the href: " + link_address + "<br/>";				
+			}
+			displayToMessageContainer(output);
+			
+		//DOM Events: (For a full list see https://www.w3schools.com/jsref/dom_obj_event.asp
+		//		blur -> when focus is taken off an element.  For example when a user 
+		//				clicks away from an element or presses tab.
+		//		change -> when the value of a form element changes
+		//		cut/copy/paste -> When a user performs a cut/copy/or paste action in a field
+		//		click -> when a user clicks on an element
+		//		dblclick -> when a user double clicks an element
+		//		focus -> when focus is given to an element (when it is selected)
+		//		keydown -> When a users is pressing a key
+		//		keypress -> When a user presses a key
+		//		keyup -> When a user releases a key
+		//		load -> when an element's content is done loading
+		//		mouseover -> when a user's pointer goes over an element
+		//		scroll -> when the user scrolls a document
+		//		submit -> when a form is submitted
+		//		touchstart, touchmove, touchend -> when a user uses touch-screen
+		//		
+		//You can update an event 3 ways.  
+		//In HTML:
+		//    	<element onclick="yourFunction();"/>
+		//In JavaScript:
+		//		yourElement.onclick = function(){ yourFunction(); };
+		//		yourElement.addEventListener("click", function() { yourFunction(); });
+		//	All of them are correct, but I prefer using addEventListener.
+		
+			
+			var button1 = document.getElementById("button1");
+			var button2 = document.getElementById("button2");
+			var button3 = document.getElementById("button3");
+			button1.addEventListener("click",function() {
+				displayToMessageContainer("Button 1 was clicked");
+			});
+			button2.addEventListener("click",function() {
+				displayToMessageContainer("Button 2 was clicked");
+			});
+			button3.addEventListener("click",function() {
+				displayToMessageContainer("Button 3 was clicked<br/>Cookies: " + document.cookie);
+			});
+			button3.addEventListener("mouseover",function() {
+				displayToMessageContainer("Moused over button 3");		
+			});
+
+			var tellmebutton = document.getElementById("tell_me_about_people");
+			tellmebutton.addEventListener("click",function() {
+				var randomperson = people[Math.floor(Math.random()*people.length)];
+				displayToMessageContainer(randomperson.tellMeAbout());
+			});
+		}
+
+		function displayToMessageContainer(text) {
+			document.getElementById("message_container").innerHTML = text;
+		}
+		
+		
+		/* Sometimes you will need to save data across multiple pages, or for
+		later visits.  Global and local variables are forgotten when the page 
+		is left, so long-term storage is needed.  For small amounts of data,
+		the most common form of storage is cookies.  In more modern browsers,
+		there is a concept of localstorage, but I am not going to cover that in
+		these lessons, but know that other means of storage exist.
+		
+		Cookies allow you to store data and to put an expiration date on that 
+		information.  When the expiration date passes, the data is deleted by
+		the browser.  This is also how you delete data after you have created
+		it - you give it an expiration date in the past and the browser will 
+		delete it.
+		
+		Note: you will rarely need to use the core JavaScript method of getting
+		and setting cookies.  There are tons of libraries that make it much 
+		easier.  The code below is more for demonstration
+		*/
+		
+		//how to create a cookie
+		document.cookie = "user_name=Nick"; 
+		document.cookie = "user_name=Nick; expires=Wed, 1 Aug 2020 12:00:00 UTC"; 
+		
+		//how to read a cookie
+		var cookies = document.cookie
+		// the variable cookies will give you a long string of all the cookie
+		// values but you can use the function below to easily get a cookie
+		// by name
+		
+		function getCookie(name) {
+			var value = "; " + document.cookie;
+			var parts = value.split("; " + name + "=");
+			if (parts.length == 2) return parts.pop().split(";").shift();
+		}
+		
+		//how to update/delete a cookie
+		document.cookie = "user_name=Nick R; expires=Wed, 1 Aug 2010 12:00:00 UTC"; 
+				
+		//using multiple cookies.
+		document.cookie = "user_name=Nick"; 
+		document.cookie = "user_role=Teacher";
+
+		var user_name = getCookie("user_name");
+		var user_role = getCookie("user_role");
+	
+		alert("Cookie values: " + user_name + " " + user_role);
+		
+		function Person(name, height, hairColor, favoriteFood) {
+			this.name = name;
+			this.height = height;
+			this.hairColor = hairColor;
+			this.favoriteFood = favoriteFood;
+			this.tellMeAbout = function() {
+				return "Meet " + this.name + " they like " + this.favoriteFood + " and have " + this.hairColor + " hair";
+			}
+		}
+		
+		var bob = new Person("Bob",65,"blond","Paprika");
+		var mary = new Person("Mary",66,"red","Apples");
+		var anaya = new Person("Anaya",62,"black","Figs");
+		var marcus = new Person("Marcus",59,"rainbow","Popcorn");
+		var people = [bob,mary,anaya,marcus];
+		
+		var notANumber = "9";
+		var newString = notANumber+4; // equals "94"
+		var answer = parseInt(notANumber) + 4; //return 13;
+		notANumber.replace("9","Happy"); // "Happy";
+		//notANumber === "9"
+		
+</script>
+</pre>
+
+<h1>Message Container:</h1>
+<div id="message_container">
+</div>
+<button id="button1">First Button</button>
+<button id="button2">Second Button</button>
+<button id="button3">Third Button</button>
+
+<br/><br/>
+<button id="tell_me_about_people">Tell me about people</button
+<br/><br/>
+<div id="basic_text">
+This is a div with basic text inside.  It will be edited using DOM example code using javascript.
+</div>
+			<a href="http://google.com">google</a>
+			<a href="http://bing.com">bing</a>
+
+	</body>
+</html>
