@@ -17,7 +17,7 @@ The code bundle for this video course is available at - https://github.com/Packt
 <LI> Accept credit-card payments using Stripe, enabling you or your business to easily make revenue
 <LI> Dynamically load content to a page using Ajax, greatly reducing page load times
 <LI> Create interactive elements quickly with BootStrap and jQuery to reduce your development time
-<LI> Integrate with thousands of open-source and paid jQuery plugins, allowing you to rapidly create amazing things.</UL></DIV>
+<LI> Integrate with thousands of open-source and paid jQuery plugins, allowing you to rapidly create amazing things.</LI></UL></DIV>
 
 ## Instructions and Navigation
 ### Assumed Knowledge
