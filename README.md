@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this Video for only $5 on PacktPub.com](https://www.packtpub.com/product/real-world-javascript-pro-level-techniques-for-entry-level-developers-video/9781788838467)
------
-*The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Real-World-JavaScript-Pro-Level-Techniques-for-Entry-Level-Developers
 This is the code repository for [Real-World JavaScript: Pro-Level Techniques for Entry-Level Developers [Video]](https://www.packtpub.com/web-development/real-world-javascript-pro-level-techniques-entry-level-developers-video), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
 ## About the Video Course
